@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clockImg {
+    width: 160px;
+    object-fit: contain;
+
+}
+
+body {
+    background-color: #333;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    background-color: rgb(255, 255, 255);
+    margin: auto 0;
+    flex-direction: column;
+    padding: 20px 20px 30px;
+    border-radius: 23px;
+}
+
+.wrapper h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 23px 0;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+
+
+#setAlarmBtn,#pauseAlarmBtn {
+    border: none;
+    background-color: #FF8400;
+    color: #ffff;
+    padding: 8px 10px;
+    border-radius: 23px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top:1rem;
+}
+
+.column {
+    border:1px solid #999;
+    border-radius: 8px;
+    width:calc(100% );
+    padding: 0 12px;
+    margin-right: 8px;
+}
+
+
+.column select {
+    cursor: pointer;
+    margin: 2px 8px;
+    outline: none;
+    border: none;
+    padding: 10px 0;
+}
+
+
+    select option { 
+        background-color:orange;
+        color:#ffff;
+      }
+   
+      
+ 
