@@ -3,7 +3,7 @@ const selectMenu = document.querySelectorAll('select');
 const displayTime = document.querySelector('h1');
 const setAlarmBtn = document.getElementById('setAlarmBtn');
 let alarmTime;
-let isAlarmSet='false';
+let isAlarmSet=false;
  let alarmRingtone = new Audio("./Awesomemorning Alarm.mp3");
 
 
@@ -65,10 +65,10 @@ function updateClock() {
 
         if(alarmTime == `${hours}:${minutes} ${amPm}`)
         {
+            console.log("Alarm is Ringing...");
             alarmRingtone.play();
-            alarmRingtone.loop =true;
-
-           
+            alarmRingtone.loop =true;           
+          setAlarmBtn.innerText = "Stop Alarm";            
         }
       
     }
@@ -80,12 +80,13 @@ setInterval(updateClock,1000);
 const setAlarm =() => {
       
     //clearing the set alarm
-    if(isAlarmSet){
-        alarmTime="";
+    if (isAlarmSet) {
+        alarmTime = "";
         alarmRingtone.pause();
-    setAlarmBtn.innerText = "Stop Alarm";
-    return isAlarmSet =false;
+        setAlarmBtn.innerText = "Set Alarm";
+        return isAlarmSet = false;
     }
+
     //getting hour,minute,amPm select tag value
     let time = `${selectMenu[0].value}:${selectMenu[1].value} ${selectMenu[2].value}` ;
 
@@ -96,6 +97,6 @@ const setAlarm =() => {
    isAlarmSet="true"
    alarmTime=time;
    console.log(`Alarm set at ${time}`);
-  
+ 
 }
 setAlarmBtn.addEventListener("click",setAlarm);
